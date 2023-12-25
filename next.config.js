@@ -1,4 +1,13 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { version } = require('./package.json');
 
-module.exports = nextConfig
+const nextConfig = {
+  reactStrictMode: true,
+  swcMinify: false,
+  output: 'export',
+  publicRuntimeConfig: {
+   version,
+ },
+};
+
+module.exports = nextConfig;
