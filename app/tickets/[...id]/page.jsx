@@ -65,7 +65,8 @@ export default function TicketDetails({ params }) {
         <h3>Esenpi</h3>
         <small>Created by</small>
         <small> {name}</small>
-
+      {(typeof window !== 'undefined')&& 
+      <>
         {!localStorage.getItem('esenpiCustomer') && (
           <div>
             <input
@@ -78,6 +79,8 @@ export default function TicketDetails({ params }) {
             <button onClick={handleAddPhoneNumber}>Add Number</button>
           </div>
         )}
+      </>
+}
 
         {amount===null&&!Send&& (
           <div>
